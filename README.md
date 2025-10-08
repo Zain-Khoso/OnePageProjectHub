@@ -1,7 +1,9 @@
-# OPPH
+# One Page Project Hub
 
-## One Page Project Hub
+**One Page Project Hub** is a small hub that brings together all my one-page, client-side projects in a single place.
 
-This is the place where you will find all my small/One_Page Projects.
+The idea was to create a network of small experiments and mini projects — each showcasing a specific concept or feature I wanted to try while learning web development.
 
-#### Feel free to leave any suggestion or bugs.
+---
+
+Made with Problem Solving by [Zain Khoso](https://linkedin.com/in/zain-khoso)
