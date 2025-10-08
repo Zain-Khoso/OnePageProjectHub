@@ -3,33 +3,34 @@ let noteName;
 let noteText;
 
 function newNote() {
-    noteName = document.getElementById('newNoteName').value.trim()
-    noteText = document.getElementById('newNoteText').value.trim()
-    
-    if (noteName === '' || noteText === '') {
-        alert('Name & Note, Both must be given.')
-        return
-    }
+  noteName = document.getElementById("newNoteName").value.trim();
+  noteText = document.getElementById("newNoteText").value.trim();
 
-    new innerHTMLGen().notePreview(noteName, noteText)
+  if (noteName === "" || noteText === "") {
+    alert("Name & Note, Both must be given.");
+    return;
+  }
 
-    document.getElementById('newNoteName').value = ''
-    document.getElementById('newNoteText').value = ''
-    
-    nNWin.classList.toggle("new-note");
+  new innerHTMLGen().notePreview(noteName, noteText);
+
+  document.getElementById("newNoteName").value = "";
+  document.getElementById("newNoteText").value = "";
+
+  nNWin.classList.toggle("new-note");
 }
 
 function fullview(node) {
-    let note = node.previousElementSibling.textContent.trim()
-    let title = node.previousElementSibling.previousElementSibling.textContent.trim()
-    new innerHTMLGen().noteFullview(title, note)
+  let note = node.previousElementSibling.textContent.trim();
+  let title =
+    node.previousElementSibling.previousElementSibling.textContent.trim();
+  new innerHTMLGen().noteFullview(title, note);
 }
 
 function innerHTMLGen() {
-    this.notePreview = function (name, note) {
-        let node = document.createElement("div");
-        node.classList = "bg-green-400 w-36 h-28 rounded-xl p-1 text-center m-4";
-        node.innerHTML = `
+  this.notePreview = function (name, note) {
+    let node = document.createElement("div");
+    node.classList = "bg-green-400 w-36 h-28 rounded-xl p-1 text-center m-4";
+    node.innerHTML = `
         <h1 class="text-xl text-black font-mono border-b p-2">
             ${name}
         </h1>
@@ -46,13 +47,14 @@ function innerHTMLGen() {
             Delete
         </button>
         `;
-        document.getElementById('noteContainer').appendChild(node)
-    };
+    document.getElementById("noteContainer").appendChild(node);
+  };
 
-    this.noteFullview = function (name, note) {
-        let node = document.createElement('div')
-        node.classList = 'fixed top-24  w-full h-96 bg-emerald-500 rounded-2xl z-10 p-2 sm:top-44'
-        node.innerHTML = `
+  this.noteFullview = function (name, note) {
+    let node = document.createElement("div");
+    node.classList =
+      "fixed top-24  w-full h-96 bg-emerald-500 rounded-2xl z-10 p-2 sm:top-44";
+    node.innerHTML = `
             <h1 class="text-4xl text-black text-center border-b py-3">
                 ${name}
             </h1>
@@ -69,14 +71,14 @@ function innerHTMLGen() {
                     </button>
                 </div>
             </div>
-        `
-        document.body.appendChild(node)
-    }
+        `;
+    document.body.appendChild(node);
+  };
 }
 
 document.querySelectorAll(".add-note-toggle").forEach((elem) => {
-    elem.addEventListener("click", () => {
-        nNWin.classList.toggle("new-note");
-    });
+  elem.addEventListener("click", () => {
+    nNWin.classList.toggle("new-note");
+  });
 });
-document.getElementById('addNewNoteBtn').addEventListener("click", newNote)
+document.getElementById("addNewNoteBtn").addEventListener("click", newNote);
