@@ -6,4 +6,4 @@ The idea was to create a network of small experiments and mini projects — each
 
 ---
 
-Made with Problem Solving by [Zain Khoso](https://linkedin.com/in/zain-khoso)
+Made with Problem Solving by [Zain Khoso](https://zain-khoso.vercel.app)
